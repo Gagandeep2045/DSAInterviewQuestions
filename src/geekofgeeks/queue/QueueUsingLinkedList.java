@@ -4,7 +4,7 @@ public class QueueUsingLinkedList {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		QueueLinkedListApproach q = new QueueLinkedListApproach();
+		QueueLinkedListApproach<Integer> q = new QueueLinkedListApproach<>();
 		q.enqueue(1);
 		q.enqueue(2);
 		q.enqueue(3);
@@ -34,13 +34,13 @@ public class QueueUsingLinkedList {
 
 }
 
-class QueueLinkedListApproach {
+class QueueLinkedListApproach<T> {
 
-	private Node front; // head
-	private Node rear; // tail
+	private Node<T> front; // head
+	private Node<T> rear; // tail
 
-	void enqueue(Object obj) {
-		Node e = new Node(obj);
+	void enqueue(T obj) {
+		Node<T> e = new Node<>(obj);
 		if (front == null && rear == null) // no element in queue in the very beginning
 		{
 			front = e;
@@ -53,8 +53,8 @@ class QueueLinkedListApproach {
 		}
 	}
 
-	Node dequeue() {
-		Node e = front;
+	Node<T> dequeue() {
+		Node<T> e = front;
 		if (front != null) {
 			if (front == rear) // only one element left in the queue which needs to be dequeued
 			{
@@ -68,21 +68,25 @@ class QueueLinkedListApproach {
 		return e;
 	}
 
-	Node getFront() {
+	Node<T> getFront() {
 		return front;
 	}
 
-	Node getRear() {
+	Node<T> getRear() {
 		return rear;
+	}
+
+	public boolean isEmpty() {
+		return front == null;
 	}
 
 }
 
-class Node {
-	Object data;
-	Node next;
+class Node<T> {
+	T data;
+	Node<T> next;
 
-	public Node(Object data) {
+	public Node(T data) {
 		this.data = data;
 	}
 
