@@ -40,20 +40,26 @@ class StackUsingQueue<T> {
 
 	}
 
-	Object pop() {
+	Node<T> pop() {
 		return mainQueue.dequeue();
 	}
 
+	boolean isEmpty() {
+		return mainQueue.isEmpty();
+	}
 }
 
 /*
  * 
  * https://practice.geeksforgeeks.org/tracks/DSASP-Queue/?batchId=154&tab=1
  * Three approaches available
- * a) Making enqueue costly operation i.e O(n) and dequeue inexpensive operation O(1)
- *  -> We used this approach here -> Complexity is O(n) as you dequeue all elements 
- *  from main queue and enqueue it to auxiliary array.Then push the element to be added into main queue and then dequeue auxillary queue
- * and push elements back to main underlying queue from auxilliary queue
- * b) Make dequeue costly i.e O(n) and enqueue inexpensive i.e O(1)
+* a) Making enqueue costly operation i.e O(n) and
+ * dequeue inexpensive operation O(1) -> We used this approach here ->
+ * Complexity is O(n) as you dequeue all elements from main queue and enqueue it
+ * to auxiliary array.Then push the element to be added into main queue and then
+ * dequeue auxillary queue and push elements back to main underlying queue from
+ * auxilliary queue
+ *b) Make dequeue costly i.e O(n) and enqueue inexpensive i.e
+ * O(1)
  * 
  */
