@@ -8,9 +8,11 @@ public class MiddleOfSinglyLinkedList {
 		l.add(2);
 		l.add(3);
 		l.add(4);
-		// l.add(5);
+		//l.add(5);
 		LinkedList.Node node = l.getMiddle();
 		System.out.println(node);
+		LinkedList.Node node1 = l.getMiddle_19_12_2021();
+		System.out.println(node1);
 	}
 
 }
@@ -62,6 +64,16 @@ class LinkedList {
 			slow = slow.next;
 		}
 		return slow;
+	}
+
+	Node getMiddle_19_12_2021() {  //Refer page 3 of register
+		Node sptr = head;
+		Node fptr = head;
+		while (fptr != tail && fptr.next != tail) {
+			sptr = sptr.next;
+			fptr = fptr.next.next;
+		}
+		return sptr;
 	}
 
 	static class Node {
