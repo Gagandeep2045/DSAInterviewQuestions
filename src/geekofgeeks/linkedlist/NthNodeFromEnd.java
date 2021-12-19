@@ -10,9 +10,12 @@ public class NthNodeFromEnd {
 		l.add(2);
 		l.add(3);
 		l.add(4);
-		 l.add(5);
-		Node n = nthNodeFromEnd(l, 2);
+		l.add(5);
+		Node n = nthNodeFromEnd(l, 4);
+		Node n1 = nthNodeFromEnd_19_12_2021(l,4);
 		System.out.println(n);
+		System.out.println(n1);
+
 	}
 
 	static LinkedList.Node nthNodeFromEnd(LinkedList l, int n) {
@@ -25,6 +28,26 @@ public class NthNodeFromEnd {
 		}
 
 		while (offsetNode != null) {
+			start = start.next;
+			offsetNode = offsetNode.next;
+		}
+		return start;
+	}
+	
+	static LinkedList.Node nthNodeFromEnd_19_12_2021(LinkedList l, int n) //Refer to page 4 of register
+	{
+		Node start = l.head;
+		Node offsetNode = l.head;
+		int i = 1;
+		//make offsetNode point to nth node from beginning of linked list if n=1 then offset=head and it should not iterate
+		//below loop even once
+		for (i = 1; i <= n-1; i++) {
+			offsetNode = offsetNode.next;
+
+		}
+		//now when offsetNode points to tail when start node points to nth node from beginning of linked list given that
+		// both start node and offsetNode are traversing at pace of 1 node each
+		while (offsetNode != l.tail) {
 			start = start.next;
 			offsetNode = offsetNode.next;
 		}
