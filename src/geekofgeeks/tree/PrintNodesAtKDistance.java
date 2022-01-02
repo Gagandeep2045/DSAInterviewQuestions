@@ -61,7 +61,7 @@ public class PrintNodesAtKDistance {
 }
 
 /*
-Check diagramatic explanation of solution in register page 7,8,9
+Check diagrammatic explanation of solution in register page 7,8,9
 
-
+Time Complexity -> O(n) , Auxiliary Complexity -> O(H) where H is height of binary tree
 */
