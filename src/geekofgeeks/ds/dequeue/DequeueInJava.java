@@ -10,14 +10,14 @@ public class DequeueInJava {
 		// TODO Auto-generated method stub
 
 		Deque<Integer> q = new LinkedList<>();
-		q.offerFirst(12);
-		q.offerLast(23);
+		q.offerFirst(12); //add at front end
+		q.offerLast(23); // add at rear end
 		q.offerLast(90);
 		q.offerFirst(33);
 		q.offerFirst(11);
-		int elementLast = q.pollLast();
+		int elementLast = q.pollLast(); // delete at rear end
 		System.out.println("ElementLast :" + elementLast);
-		int elementLast2 = q.pollLast();
+		int elementLast2 = q.pollLast(); // delete at rear end
 		System.out.println("ElementLast :" + elementLast2);
 
 		Iterator<Integer> e1 = q.iterator(); // from front to rear
@@ -35,7 +35,7 @@ public class DequeueInJava {
 
 }
 
-/*
+/*Deueue - Doubly ended queue
  * Dequeue allows addition both at front and rear end .,,,,....Dequeue allows deletion
  * both at front and rear end
  * 
